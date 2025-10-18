@@ -2,7 +2,7 @@ name: Update AkashGo Playlist
 
 on:
   schedule:
-    - cron: "*/20 * * * *"  
+    - cron: "*/20 * * * *"   # 20 minite run
   workflow_dispatch:
 
 jobs:
@@ -35,9 +35,18 @@ jobs:
         env:
           AKASH_STATIC_TOKEN: ${{ secrets.AKASH_STATIC_TOKEN }}
           AKASH_SUBSCRIBER_ID: ${{ secrets.AKASH_SUBSCRIBER_ID }}
-          fuck_b: ${{ secrets.FUCK_B }}
+          FUCK_B: ${{ secrets.FUCK_B }}
           AKASH_API_URL: ${{ secrets.AKASH_API_URL }}
           AKASH_USERNAME: ${{ secrets.AKASH_USERNAME }}
+          AKASH_APP_ID: ${{ secrets.AKASH_APP_ID }}
+          AKASH_APP_KEY: ${{ secrets.AKASH_APP_KEY }}
+          AKASH_DEVICE_TYPE: ${{ secrets.AKASH_DEVICE_TYPE }}
+          AKASH_DEVICE_PLATFORM: ${{ secrets.AKASH_DEVICE_PLATFORM }}
+          AKASH_USER_AGENT: ${{ secrets.AKASH_USER_AGENT }}
+          AKASH_ORIGIN: ${{ secrets.AKASH_ORIGIN }}
+          AKASH_REFERER: ${{ secrets.AKASH_REFERER }}
+          AKASH_SUBSCRIPTION_TYPE: ${{ secrets.AKASH_SUBSCRIPTION_TYPE }}
+          AKASH_DTH_STATUS: ${{ secrets.AKASH_DTH_STATUS }}
 
       - name: Commit updated playlist
         run: |
